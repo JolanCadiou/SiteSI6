@@ -1,0 +1,63 @@
+DROP DATABASE IF EXISTS MLR1;
+
+CREATE DATABASE IF NOT EXISTS MLR1;
+USE MLR1;
+
+
+# -----------------------------------------------------------------------------
+#       TABLE : RECETTE
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS RECETTE
+ (
+   ID DB_INTEGER(5) NOT NULL  ,
+   ID_UTILISATEUR DB_INTEGER(2) NULL  ,
+   TITRE DB_TEXT, 255 NULL  ,
+   CONTENU DB_TEXT, 255 NULL  ,
+   DUREECUISSON DB_INTEGER(3) NULL  ,
+   DUREEPREPARATION DB_INTEGER(3) NULL  ,
+   IMAGE DB_TEXT(1000) NULL  ,
+   NOTE DB_INTEGER(2) NULL  
+   , PRIMARY KEY (ID) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE RECETTE
+# -----------------------------------------------------------------------------
+
+
+CREATE  INDEX I_FK_RECETTE_UTILISATEUR
+     ON RECETTE (ID_UTILISATEUR ASC);
+
+# -----------------------------------------------------------------------------
+#       TABLE : UTILISATEUR
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS UTILISATEUR
+ (
+   ID DB_INTEGER(2) NOT NULL  ,
+   NOM DB_TEXT, 32 NULL  ,
+   PRENOM DB_TEXT, 32 NULL  ,
+   PSEUDO DB_TEXT, 32 NULL  ,
+   MDP DB_TEXT, 32 NULL  ,
+   ADRESSEMAIL DB_TEXT, 32 NULL  ,
+   DATENAISSANCE DB_DATE(8) NULL  ,
+   ADMINISTRATEUR DB_INTEGER(1) NULL  
+   , PRIMARY KEY (ID) 
+ ) 
+ comment = "";
+
+
+# -----------------------------------------------------------------------------
+#       CREATION DES REFERENCES DE TABLE
+# -----------------------------------------------------------------------------
+
+
+
+
+
+ALTER TABLE RECETTE 
+  ADD FOREIGN KEY FK_RECETTE_UTILISATEUR (ID_UTILISATEUR)
+      REFERENCES UTILISATEUR (ID) ;
+

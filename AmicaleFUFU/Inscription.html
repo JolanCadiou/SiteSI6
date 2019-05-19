@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Solibio</title>
+		<link rel="stylesheet" href="mystyle.css">
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div class="header"><h1><p>Inscription</p></h1></div>
+		<div class="topnav">
+			<li><b><a href="index.php">Accueil</a></b></li>
+			<li><b><a href="Recette.php">Recettes</a></b></li>
+			<li><b><a href="Profil.php">Mon Profil</a></b></li>
+			<form style="float:right; margin-top:5px" action="action_connexion.php" method="post">
+			  <input style="margin-right: 40px;" type="text" name="mail" placeholder="Mail" required><br />
+			  <input style="margin-right: 40px;" type="password" name="motDePasse" placeholder="Mot de passe" required><br />
+			  <button type="submit" class="button">Connexion</button>	  
+			</form>
+		</div>
+		<div class="centerColumn">
+			<div class="card">
+				<form action="action_inscription.php"  method="post">
+					<br />
+			  		<input style="width: 200px; height: 30px; float: center; margin-left: 15%; text-align: center" type="text" name="nom" placeholder="Nom" value="" min="0" max="20" required>
+			  		<br />
+			  		<br />
+			  		<input style="width: 200px; height: 30px; float: center; margin-left: 15%; text-align: center" type="text" name="prenom" placeholder="Prénom" value="" min="0" max="20	" required>
+			  		<br />
+			  		<br />
+			  		<input  style="width: 200px; height: 30px; float: center; margin-left: 15%; text-align: center" type="password" name="mdp" placeholder="Mot de Passe" value="" min="0" max="50" required>
+			  		<br />
+			  		<br />
+			  		<input style="width: 200px; height: 30px; float: center; margin-left: 15%; text-align: center" type="email" name="mail" placeholder="Adresse email" value="" min="0" max="20" required>
+			  		<br />
+			  		<br />
+			  		<input style="width: 140px; height: 45px; float: center; margin-left: 25%" type="submit" value="Envoyer">
+					<br />
+			  		<br />
+			  		<input  style="width: 225px; height: 30px; float: center; margin-left: 10%; text-align: center" type="password" name="MDP_Admin" placeholder="Mot de Passe pour les administrateurs" value="" min="0" max="50" >
+				</form>
+			</div>
+		</div>
+		<div class="footer" style="position: fixed;"><p class="pdp">Pied de page :)</p></div>
+	</body>
+</html>
