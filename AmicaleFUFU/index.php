@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<div class="header"><h1><p>SOLIBIO</p></h1></div>
+		<div class="header"><h1><p>Amicale Fulbert</p></h1></div>
 		<div class="topnav">
 			<li><b><a class="active" href="index.php">Accueil</a></b></li>
 			<li><b><a href="Recette.php">Recettes</a></b></li>
@@ -18,6 +18,7 @@
 			  <a href="Inscription.html"class="pas_inscrit"><p>Pas encore inscrit ?</p></a>
 			</form>
 		</div>
-		<div class="footer" style="position: fixed;"><p class="pdp">Pied de page :)</p></div>
+		<b><p class="bienvenue">Bienvenue sur le site de Amicale Fulbert</p></b>
+		<div class="footer" style="position: fixed;"><p class="pdp">Pied de page</p></div>
 	</body>
 </html>

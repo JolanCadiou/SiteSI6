@@ -20,10 +20,10 @@
 		</div>
 		<div class="rightcolumn">
 			<div class="card">
-				<form action="/action_page.php">
-					<input type="text" name="recherche" placeholder="Chercher une recette...">
-					<button type="submit" class="recherche">Recherche</button><br />
-					<button><a href="creationRecette.php" class="creer_recette">Creer une recette</a></button>
+				<form action="verif-form.php" method = "get">
+					<input type="search" name="terme" placeholder="Chercher une recette...">
+					<input type="submit" name="s" class="recherche" value="Rechercher"><br />
+					<button><a href="creationRecette.html" class="creer_recette">Creer une recette</a></button>
 				</form>
 			</div>
 		</div>
