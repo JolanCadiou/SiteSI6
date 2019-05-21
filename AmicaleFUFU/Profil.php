@@ -26,7 +26,10 @@ catch(Exception $e)
 }
 
 
-$test = $bdd-> query('Select id,nom,prenom,mail,PP from utilisateurmdp');
+
+ if (isset($_SESSION['id']))
+{
+	$test = $bdd-> query('Select id,nom,prenom,mail,PP from utilisateurmdp');
 
 
 while ($donnees = $test->fetch())
@@ -59,7 +62,18 @@ while ($donnees = $test->fetch())
 		</div>
 		<?php
 	}		
-}?>
+}
+}
+else
+{
+	echo '<br>'."Vous ne pouvez pas accéder à votre profil si vous n'êtes pas connecté.".'<br>'."Veuillez vous connectez ou créer un compte pour pouvoir accéder à votre profil.";
+	
+}
+
+
+
+
+?>
 			<div class="footer" style="position: fixed;"><p class="pdp">Pied de page :)</p></div>
 	</body>
 </html>

@@ -23,7 +23,7 @@
 				<form action="/action_page.php">
 					<input type="text" name="recherche" placeholder="Chercher une recette...">
 					<button type="submit" class="recherche">Recherche</button><br />
-					<button><a href="creationRecette.html" class="creer_recette">Creer une recette</a></button>
+					<button><a href="creationRecette.php" class="creer_recette">Creer une recette</a></button>
 				</form>
 			</div>
 		</div>

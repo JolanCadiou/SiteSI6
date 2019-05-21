@@ -75,6 +75,45 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+function redimmensionner_image($fichier, $nouvelle_taille){
+	
+	global $error;
+	
+	$longueur = $nouvelle_taille;
+	$largeur = $nouvelle_taille;
+	
+	$taille = getimagesize($fichier);
+	
+	if ($taille){
+		
+		if ($taille['mime']=='image/jpeg'){
+			
+			$img_big = imagecreatefromjpeg($fichier);
+			$img_new = imagecreate($longueur, $largeur);
+			
+			
+			$img_petite = imagecreatetruecolor($longueur,$largeur) or $img_petite = imagecreate($longeur, $largeur);
+			
+			imagecopyresized($img_petite,$img_big,0,0,0,0,$longueur,$largeur,$taille[0],$taille[1]);
+			imagejpeg($img_petite,$fichier);
+			
+		}
+		
+		else if($taille['mime']=='image/png'){
+			
+			$img_big = imagecreatefrompng($fichier);
+			$img_new = imagecreate($longueur, $largeur);
+			
+			
+			$img_petite = imagecreatetruecolor($longueur,$largeur) or $img_petite = imagecreate($longeur, $largeur);
+			
+			imagecopyresized($img_petite,$img_big,0,0,0,0,$longueur,$largeur,$taille[0],$taille[1]);
+			imagepng($img_petite,$fichier);
+			
+		}
+	}
+	
+}
 
 
 try
@@ -110,38 +149,9 @@ catch(Exception $e)
 {
         die('Erreur : '.$e->getMessage());	
 }
+redimmensionner_image("Recette_Image/".$photo,400);
+header('location: Recette.php');
 			
-/*try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=solibio_bdd_true;charset=utf8', 'root', '');
-}
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-		'nom' =>  htmlspecialchars($_POST['nom']),
-}
-	try {
-									$req = $bdd->prepare('INSERT INTO utilisateurmdp(nom, prenom, mdp, mail ) VALUES(:nom, :prenom, :mdp, :mail)');
-			$marche = $bdd->prepare('Update utilisateurmdp SET PP = ? WHERE id = ?	' );
-			$marche -> execute(array(
-			
-			$PP = basename( $_FILES["fileToUpload"]["name"]),
-			$_SESSION['id']
-			)	
-			
-			
-			);
-			echo "Gga";
-			}
-			
-			catch (Exception $e) {
-				die('Erreur : ' . $e->getMessage());
-				echo 'ça ne marche pas';
-			}
-			header('location: Profil.php');
-	
-*/
-
 
 
 	
